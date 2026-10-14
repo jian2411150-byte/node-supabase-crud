@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cadastro de cursos e alunos com Node.js e Supabase">
+  <title>Gestão de Cursos e Alunos</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo"><div><p class="eyebrow">NODE.JS + SUPABASE</p><h1>Gestão acadêmica</h1><p class="sub">CRUD de cursos e alunos com relacionamento 1:N</p></div><span id="status" class="status">Conectando…</span></header>
+  <main>
+    <section class="painel"><div class="section-title"><div><p class="eyebrow">01 / CURSOS</p><h2>Cursos cadastrados</h2></div></div>
+      <form id="form-curso" class="form-inline"><label for="nome-curso">Nome do curso</label><input id="nome-curso" name="nome" placeholder="Ex.: Análise e Desenvolvimento de Sistemas" required maxlength="120"><button type="submit">Adicionar curso</button></form>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Curso</th><th>Alunos</th><th>Ações</th></tr></thead><tbody id="tabela-cursos"><tr><td colspan="4">Carregando cursos…</td></tr></tbody></table></div>
+    </section>
+    <section class="painel"><div class="section-title"><div><p class="eyebrow">02 / ALUNOS</p><h2>Alunos cadastrados</h2></div><button id="novo-aluno" type="button">+ Novo aluno</button></div>
+      <div class="filtro"><label for="filtro-curso">Filtrar por curso</label><select id="filtro-curso"><option value="">Todos os cursos</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>Nome</th><th>RA</th><th>Curso</th><th>Ações</th></tr></thead><tbody id="tabela-alunos"><tr><td colspan="4">Carregando alunos…</td></tr></tbody></table></div>
+    </section>
+    <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+  </main>
+  <dialog id="modal-aluno"><form id="form-aluno" method="dialog"><div class="modal-topo"><div><p class="eyebrow">CADASTRO</p><h2 id="titulo-modal">Novo aluno</h2></div><button type="button" class="fechar" id="fechar-modal" aria-label="Fechar">×</button></div>
+    <label for="aluno-nome">Nome completo</label><input id="aluno-nome" name="nome" required maxlength="120" placeholder="Nome do aluno">
+    <label for="aluno-ra">RA (registro acadêmico)</label><input id="aluno-ra" name="ra" required maxlength="40" placeholder="Ex.: 2026001">
+    <label for="aluno-curso">Curso</label><select id="aluno-curso" name="curso_id" required><option value="">Selecione um curso</option></select>
+    <div class="modal-acoes"><button type="button" class="secundario" id="cancelar-modal">Cancelar</button><button type="submit">Salvar aluno</button></div>
+  </form></dialog>
+  <footer>Projeto educacional · API REST · PostgreSQL · Supabase</footer>
+  <script src="app.js" defer></script>
+</body></html>

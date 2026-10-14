@@ -1,0 +1,9 @@
+{
+  "name": "node-supabase-crud",
+  "version": "1.0.0",
+  "description": "API CRUD com Node.js, Express e Supabase para cursos e alunos (relacionamento 1:N)",
+  "main": "server.js",
+  "scripts": {"start": "node server.js", "dev": "node --watch server.js", "demo": "node index.js"},
+  "dependencies": {"@supabase/supabase-js": "^2.57.0", "dotenv": "^16.4.7", "express": "^5.1.0"},
+  "engines": {"node": ">=20"}
+}
